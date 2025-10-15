@@ -5,6 +5,7 @@ import { Sparkles, MessageCircle, FileText } from 'lucide-react';
 import TripPlanningForm from '@/components/TripPlanningForm';
 import ChatInterface from '@/components/ChatInterface';
 import ItineraryDisplay from '@/components/ItineraryDisplay';
+import ThemeToggle from '@/components/ThemeToggle';
 import { TripPlanningRequest, Itinerary } from '@/types';
 
 type ViewMode = 'form' | 'chat' | 'itinerary';
@@ -46,9 +47,9 @@ export default function PlanPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Header */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-white dark:bg-gray-900 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <a href="/" className="flex items-center gap-2">
             <Sparkles className="w-8 h-8 text-blue-600" />
@@ -56,13 +57,13 @@ export default function PlanPage() {
               AI DreamTrip
             </span>
           </a>
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center">
             <button
               onClick={() => setViewMode('form')}
               className={`px-4 py-2 rounded-full font-medium transition ${
                 viewMode === 'form'
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
             >
               <FileText className="w-4 h-4 inline mr-2" />
@@ -73,7 +74,7 @@ export default function PlanPage() {
               className={`px-4 py-2 rounded-full font-medium transition ${
                 viewMode === 'chat'
                   ? 'bg-blue-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
             >
               <MessageCircle className="w-4 h-4 inline mr-2" />
@@ -85,12 +86,13 @@ export default function PlanPage() {
                 className={`px-4 py-2 rounded-full font-medium transition ${
                   viewMode === 'itinerary'
                     ? 'bg-blue-600 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
                 View Itinerary
               </button>
             )}
+            <ThemeToggle />
           </div>
         </div>
       </header>
@@ -103,11 +105,11 @@ export default function PlanPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Plan Your Dream Trip
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 Fill in the details and let AI create your perfect itinerary
               </p>
             </div>
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8">
               <TripPlanningForm onSubmit={handleFormSubmit} isLoading={isLoading} />
             </div>
           </div>
@@ -119,7 +121,7 @@ export default function PlanPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Chat with AI Travel Assistant
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 Have a conversation to plan your perfect trip
               </p>
             </div>
@@ -135,7 +137,7 @@ export default function PlanPage() {
               <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Your Dream Itinerary
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-gray-600 dark:text-gray-300">
                 Review and customize your AI-generated travel plan
               </p>
               <button

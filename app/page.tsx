@@ -1,10 +1,13 @@
+"use client";
+
 import { MapPin, Clock, Sparkles, Navigation, Cloud, Heart, MessageCircle, CreditCard, Brain, Zap, TrendingUp, Users } from "lucide-react";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+      <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <MapPin className="w-8 h-8 text-blue-600" />
@@ -13,9 +16,10 @@ export default function Home() {
             </span>
           </div>
           <div className="hidden md:flex gap-8 items-center">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition">Features</a>
-            <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition">How It Works</a>
-            <a href="#pricing" className="text-gray-600 hover:text-gray-900 transition">Pricing</a>
+            <a href="#features" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Features</a>
+            <a href="#how-it-works" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">How It Works</a>
+            <a href="#pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition">Pricing</a>
+            <ThemeToggle />
             <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition">
               Get Started
             </button>
@@ -35,7 +39,7 @@ export default function Home() {
             Plan, Book & Travel—<br />All Automated by AI
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
             End-to-end trip planning optimized for your budget, mood, and time. Real-time guidance that adapts to weather, delays, and your preferences.
           </p>
           
@@ -43,12 +47,12 @@ export default function Home() {
             <a href="/plan" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition transform hover:scale-105">
               Start Planning Free
             </a>
-            <a href="/plan" className="bg-white text-gray-700 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 hover:border-gray-300 transition">
+            <a href="/plan" className="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition">
               Watch Demo
             </a>
           </div>
           
-          <div className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-600">
+          <div className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-yellow-500" />
               <span>80% Faster Planning</span>
@@ -72,21 +76,21 @@ export default function Home() {
               </div>
             </div>
             {/* Floating Cards */}
-            <div className="absolute -top-4 -left-4 bg-white rounded-2xl shadow-xl p-4 hidden lg:block">
+            <div className="absolute -top-4 -left-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 hidden lg:block">
               <div className="flex items-center gap-3">
                 <Clock className="w-8 h-8 text-blue-600" />
                 <div>
-                  <p className="text-sm text-gray-500">Next Stop</p>
-                  <p className="font-semibold">Eiffel Tower</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Next Stop</p>
+                  <p className="font-semibold dark:text-white">Eiffel Tower</p>
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl p-4 hidden lg:block">
+            <div className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 hidden lg:block">
               <div className="flex items-center gap-3">
                 <Heart className="w-8 h-8 text-pink-600" />
                 <div>
-                  <p className="text-sm text-gray-500">Hidden Gem</p>
-                  <p className="font-semibold">Local Bakery</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">Hidden Gem</p>
+                  <p className="font-semibold dark:text-white">Local Bakery</p>
                 </div>
               </div>
             </div>
@@ -95,76 +99,76 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-6 bg-white">
+      <section id="features" className="py-20 px-6 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Everything you need for the perfect trip</h2>
-            <p className="text-xl text-gray-600">From planning to booking to real-time guidance—all in one place</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">From planning to booking to real-time guidance—all in one place</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-xl transition">
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl p-8 hover:shadow-xl transition">
               <div className="bg-blue-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
                 <Brain className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">AI Trip Planning</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold mb-3 dark:text-white">AI Trip Planning</h3>
+              <p className="text-gray-600 dark:text-gray-200">
                 End-to-end itinerary generation based on your mood, budget, and duration. Optimized for your unique travel style.
               </p>
             </div>
 
             {/* Feature 2 */}
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition">
+            <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl p-8 hover:shadow-xl transition">
               <div className="bg-purple-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
                 <MessageCircle className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Conversational AI</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold mb-3 dark:text-white">Conversational AI</h3>
+              <p className="text-gray-600 dark:text-gray-200">
                 Chat naturally to plan, modify, or refine your trip. Your AI assistant understands context and preferences.
               </p>
             </div>
 
             {/* Feature 3 */}
-            <div className="bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 hover:shadow-xl transition">
+            <div className="bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900/30 dark:to-pink-800/30 rounded-2xl p-8 hover:shadow-xl transition">
               <div className="bg-pink-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
                 <CreditCard className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Auto-Booking</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold mb-3 dark:text-white">Auto-Booking</h3>
+              <p className="text-gray-600 dark:text-gray-200">
                 Seamless integration with flights, hotels, and cabs. Book everything with one click—no juggling multiple apps.
               </p>
             </div>
 
             {/* Feature 4 */}
-            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition">
+            <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-2xl p-8 hover:shadow-xl transition">
               <div className="bg-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
                 <Cloud className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Real-Time Adaptation</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold mb-3 dark:text-white">Real-Time Adaptation</h3>
+              <p className="text-gray-600 dark:text-gray-200">
                 Weather changes? Flight delayed? AI instantly reshuffles your itinerary and suggests alternatives.
               </p>
             </div>
 
             {/* Feature 5 */}
-            <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover:shadow-xl transition">
+            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 rounded-2xl p-8 hover:shadow-xl transition">
               <div className="bg-orange-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
                 <Navigation className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Live Travel Mode</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold mb-3 dark:text-white">Live Travel Mode</h3>
+              <p className="text-gray-600 dark:text-gray-200">
                 Turn-by-turn navigation, local recommendations, and instant updates—your AI guide throughout the journey.
               </p>
             </div>
 
             {/* Feature 6 */}
-            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-2xl p-8 hover:shadow-xl transition">
+            <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/30 dark:to-indigo-800/30 rounded-2xl p-8 hover:shadow-xl transition">
               <div className="bg-indigo-600 w-14 h-14 rounded-xl flex items-center justify-center mb-4">
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
-              <h3 className="text-2xl font-bold mb-3">Personalization Engine</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold mb-3 dark:text-white">Personalization Engine</h3>
+              <p className="text-gray-600 dark:text-gray-200">
                 AI learns from your trips to build your unique travel persona. Every journey gets smarter and more tailored.
               </p>
             </div>
@@ -177,7 +181,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">How AI DreamTrip works</h2>
-            <p className="text-xl text-gray-600">Five steps from idea to unforgettable journey</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Five steps from idea to unforgettable journey</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -186,7 +190,7 @@ export default function Home() {
                 1
               </div>
               <h3 className="text-xl font-bold mb-3">Share Your Vision</h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Tell AI your destination, budget, mood, duration, and preferences via chat.
               </p>
             </div>
@@ -196,7 +200,7 @@ export default function Home() {
                 2
               </div>
               <h3 className="text-xl font-bold mb-3">AI Plans Everything</h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Get an optimized end-to-end itinerary with flights, hotels, attractions, and bookings.
               </p>
             </div>
@@ -206,7 +210,7 @@ export default function Home() {
                 3
               </div>
               <h3 className="text-xl font-bold mb-3">Review & Refine</h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Chat with AI to modify, swap activities, or adjust timing until it's perfect.
               </p>
             </div>
@@ -216,7 +220,7 @@ export default function Home() {
                 4
               </div>
               <h3 className="text-xl font-bold mb-3">Live Travel Mode</h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Real-time guidance, weather updates, rerouting, and local tips throughout your trip.
               </p>
             </div>
@@ -226,7 +230,7 @@ export default function Home() {
                 5
               </div>
               <h3 className="text-xl font-bold mb-3">AI Learns & Improves</h3>
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
                 Post-trip feedback helps AI refine your travel persona for even better future trips.
               </p>
             </div>
@@ -235,43 +239,43 @@ export default function Home() {
       </section>
 
       {/* Target Users Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Perfect for every traveler</h2>
-            <p className="text-xl text-gray-600">Whether you're solo, with family, or on business</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Whether you're solo, with family, or on business</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
               <div className="text-4xl mb-4">🎒</div>
               <h3 className="text-xl font-bold mb-2">Solo Travelers</h3>
-              <p className="text-gray-600 text-sm">Simple, automated planning for independent explorers seeking adventure.</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Simple, automated planning for independent explorers seeking adventure.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
               <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
               <h3 className="text-xl font-bold mb-2">Families</h3>
-              <p className="text-gray-600 text-sm">Balanced itineraries with safety, fun activities, and stress-free logistics.</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Balanced itineraries with safety, fun activities, and stress-free logistics.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
               <div className="text-4xl mb-4">💼</div>
               <h3 className="text-xl font-bold mb-2">Business Travelers</h3>
-              <p className="text-gray-600 text-sm">Time-efficient trips optimized for productivity and convenience.</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Time-efficient trips optimized for productivity and convenience.</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
+            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition">
               <div className="text-4xl mb-4">🎓</div>
               <h3 className="text-xl font-bold mb-2">Students</h3>
-              <p className="text-gray-600 text-sm">Budget-conscious planning with maximum experiences at minimum cost.</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">Budget-conscious planning with maximum experiences at minimum cost.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Proven results, happy travelers</h2>
@@ -282,28 +286,28 @@ export default function Home() {
               <div className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
                 80%
               </div>
-              <p className="text-gray-600">Planning Time Saved</p>
+              <p className="text-gray-600 dark:text-gray-300">Planning Time Saved</p>
             </div>
 
             <div>
               <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
                 4.8/5
               </div>
-              <p className="text-gray-600">User Satisfaction</p>
+              <p className="text-gray-600 dark:text-gray-300">User Satisfaction</p>
             </div>
 
             <div>
               <div className="text-5xl font-bold bg-gradient-to-r from-pink-600 to-orange-600 bg-clip-text text-transparent mb-2">
                 90%
               </div>
-              <p className="text-gray-600">Itinerary Accuracy</p>
+              <p className="text-gray-600 dark:text-gray-300">Itinerary Accuracy</p>
             </div>
 
             <div>
               <div className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">
                 70%
               </div>
-              <p className="text-gray-600">Return Users</p>
+              <p className="text-gray-600 dark:text-gray-300">Return Users</p>
             </div>
           </div>
         </div>
