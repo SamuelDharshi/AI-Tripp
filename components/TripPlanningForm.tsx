@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Calendar, DollarSign, Users, Heart, Sparkles } from 'lucide-react';
+import { Calendar, IndianRupee, Users, Heart, Sparkles } from 'lucide-react';
 import { TripPlanningRequest } from '@/types';
 
 interface TripPlanningFormProps {
@@ -110,16 +110,16 @@ export default function TripPlanningForm({ onSubmit, isLoading }: TripPlanningFo
       <div className="grid md:grid-cols-2 gap-6">
         <div>
           <label className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-2">
-            <DollarSign className="w-4 h-4 inline mr-1" />
-            Budget (USD) *
+            <IndianRupee className="w-4 h-4 inline mr-1" />
+            Budget (INR) *
           </label>
           <input
             {...register('budget', { 
               required: 'Budget is required',
-              min: { value: 100, message: 'Budget must be at least $100' }
+              min: { value: 5000, message: 'Budget must be at least ₹5000' }
             })}
             type="number"
-            placeholder="e.g., 2000"
+            placeholder="e.g., 150000"
             className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-gray-400"
           />
           {errors.budget && (

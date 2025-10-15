@@ -1,7 +1,7 @@
 "use client";
 
 import { Itinerary, DayPlan } from '@/types';
-import { Calendar, MapPin, Clock, DollarSign, Utensils, Navigation } from 'lucide-react';
+import { Calendar, MapPin, Clock, IndianRupee, Utensils, Navigation } from 'lucide-react';
 import { format } from 'date-fns';
 
 interface ItineraryDisplayProps {
@@ -27,32 +27,32 @@ export default function ItineraryDisplay({ itinerary }: ItineraryDisplayProps) {
           </div>
           <div>
             <div className="text-sm opacity-90">Estimated Cost</div>
-            <div className="text-2xl font-bold">${itinerary.totalCost.toLocaleString()}</div>
+            <div className="text-2xl font-bold">₹{itinerary.totalCost.toLocaleString()}</div>
           </div>
         </div>
       </div>
 
       {/* Accommodation */}
       {itinerary.accommodation && itinerary.accommodation.length > 0 && (
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-          <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+          <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 dark:text-white">
             <MapPin className="w-6 h-6 text-blue-600" />
             Accommodation
           </h3>
           <div className="space-y-4">
             {itinerary.accommodation.map((acc) => (
-              <div key={acc.id} className="border border-gray-200 rounded-xl p-4">
+              <div key={acc.id} className="border border-gray-200 dark:border-gray-700 rounded-xl p-4">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <h4 className="font-bold text-lg">{acc.name}</h4>
-                    <p className="text-gray-600 text-sm">{acc.location.address}</p>
+                    <h4 className="font-bold text-lg dark:text-white">{acc.name}</h4>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm">{acc.location.address}</p>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm text-gray-600">Total</div>
-                    <div className="font-bold text-lg">${acc.totalCost}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-400">Total</div>
+                    <div className="font-bold text-lg dark:text-white">₹{acc.totalCost}</div>
                   </div>
                 </div>
-                <div className="flex gap-4 text-sm text-gray-600 mt-3">
+                <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-300 mt-3">
                   <div>
                     <Calendar className="w-4 h-4 inline mr-1" />
                     Check-in: {format(new Date(acc.checkIn), 'MMM dd, yyyy')}
@@ -67,7 +67,7 @@ export default function ItineraryDisplay({ itinerary }: ItineraryDisplayProps) {
                     {acc.amenities.map((amenity, idx) => (
                       <span
                         key={idx}
-                        className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs"
+                        className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs"
                       >
                         {amenity}
                       </span>
@@ -82,21 +82,21 @@ export default function ItineraryDisplay({ itinerary }: ItineraryDisplayProps) {
 
       {/* Transportation */}
       {itinerary.transportation && itinerary.transportation.length > 0 && (
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-          <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+          <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 dark:text-white">
             <Navigation className="w-6 h-6 text-purple-600" />
             Transportation
           </h3>
           <div className="space-y-4">
             {itinerary.transportation.map((trans) => (
-              <div key={trans.id} className="border border-gray-200 rounded-xl p-4">
+              <div key={trans.id} className="border border-gray-200 dark:border-gray-700 rounded-xl p-4">
                 <div className="flex justify-between items-start">
                   <div>
-                    <div className="font-bold text-lg capitalize">{trans.type}</div>
-                    <div className="text-sm text-gray-600 mt-1">
+                    <div className="font-bold text-lg capitalize dark:text-white">{trans.type}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300 mt-1">
                       {trans.from.name} → {trans.to.name}
                     </div>
-                    <div className="flex gap-4 text-sm text-gray-600 mt-2">
+                    <div className="flex gap-4 text-sm text-gray-600 dark:text-gray-300 mt-2">
                       <div>
                         Depart: {format(new Date(trans.departureTime), 'MMM dd, HH:mm')}
                       </div>
@@ -106,7 +106,7 @@ export default function ItineraryDisplay({ itinerary }: ItineraryDisplayProps) {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="font-bold text-lg">${trans.cost}</div>
+                    <div className="font-bold text-lg dark:text-white">₹{trans.cost}</div>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function ItineraryDisplay({ itinerary }: ItineraryDisplayProps) {
 
 function DayPlanCard({ day }: { day: DayPlan }) {
   return (
-    <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
       {/* Day Header */}
       <div className="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6">
         <h3 className="text-2xl font-bold">Day {day.day}</h3>
@@ -138,7 +138,7 @@ function DayPlanCard({ day }: { day: DayPlan }) {
         {/* Activities */}
         {day.activities && day.activities.length > 0 && (
           <div>
-            <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+            <h4 className="font-bold text-lg mb-4 flex items-center gap-2 dark:text-white">
               <MapPin className="w-5 h-5 text-blue-600" />
               Activities
             </h4>
@@ -150,9 +150,9 @@ function DayPlanCard({ day }: { day: DayPlan }) {
                 >
                   <div className="flex justify-between items-start">
                     <div className="flex-1">
-                      <h5 className="font-bold text-lg">{activity.name}</h5>
-                      <p className="text-gray-600 text-sm mt-1">{activity.description}</p>
-                      <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-600">
+                      <h5 className="font-bold text-lg dark:text-white">{activity.name}</h5>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{activity.description}</p>
+                      <div className="flex flex-wrap gap-4 mt-3 text-sm text-gray-600 dark:text-gray-300">
                         <div className="flex items-center gap-1">
                           <Clock className="w-4 h-4" />
                           {activity.startTime} - {activity.endTime}
@@ -162,12 +162,12 @@ function DayPlanCard({ day }: { day: DayPlan }) {
                           {activity.location.name}
                         </div>
                         <div className="flex items-center gap-1">
-                          <DollarSign className="w-4 h-4" />
-                          ${activity.cost}
+                          <IndianRupee className="w-4 h-4" />
+                          ₹{activity.cost}
                         </div>
                       </div>
                     </div>
-                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium capitalize">
+                    <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs font-medium capitalize">
                       {activity.category}
                     </span>
                   </div>
@@ -180,7 +180,7 @@ function DayPlanCard({ day }: { day: DayPlan }) {
         {/* Meals */}
         {day.meals && day.meals.length > 0 && (
           <div>
-            <h4 className="font-bold text-lg mb-4 flex items-center gap-2">
+            <h4 className="font-bold text-lg mb-4 flex items-center gap-2 dark:text-white">
               <Utensils className="w-5 h-5 text-purple-600" />
               Meals
             </h4>
@@ -188,22 +188,22 @@ function DayPlanCard({ day }: { day: DayPlan }) {
               {day.meals.map((meal) => (
                 <div
                   key={meal.id}
-                  className="border border-gray-200 rounded-xl p-4"
+                  className="border border-gray-200 dark:border-gray-700 rounded-xl p-4"
                 >
                   <div className="flex justify-between items-start mb-2">
                     <div>
-                      <div className="text-xs text-gray-500 uppercase">{meal.type}</div>
-                      <div className="font-bold">{meal.name}</div>
+                      <div className="text-xs text-gray-500 dark:text-gray-400 uppercase">{meal.type}</div>
+                      <div className="font-bold dark:text-white">{meal.name}</div>
                     </div>
-                    <div className="text-sm font-semibold">${meal.estimatedCost}</div>
+                    <div className="text-sm font-semibold dark:text-white">₹{meal.estimatedCost}</div>
                   </div>
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-gray-600 dark:text-gray-300">
                     <Clock className="w-3 h-3 inline mr-1" />
                     {meal.time}
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">{meal.location.name}</div>
+                  <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">{meal.location.name}</div>
                   {meal.cuisine && (
-                    <span className="inline-block bg-purple-50 text-purple-700 px-2 py-1 rounded-full text-xs mt-2">
+                    <span className="inline-block bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded-full text-xs mt-2">
                       {meal.cuisine}
                     </span>
                   )}
@@ -215,8 +215,8 @@ function DayPlanCard({ day }: { day: DayPlan }) {
 
         {/* Notes */}
         {day.notes && (
-          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
-            <p className="text-sm text-gray-700">{day.notes}</p>
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-600 p-4 rounded">
+            <p className="text-sm text-gray-700 dark:text-gray-200">{day.notes}</p>
           </div>
         )}
       </div>

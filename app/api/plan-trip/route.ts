@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
 
 Trip Details:
 - Dates: ${data.startDate} to ${data.endDate}
-- Budget: $${data.budget} USD
+- Budget: ₹${data.budget} INR (Indian Rupees)
 - Travelers: ${data.travelers}
 - Mood: ${data.mood}
 - Interests: ${data.preferences?.interests?.join(', ') || 'General sightseeing'}
@@ -56,7 +56,7 @@ Please provide a comprehensive itinerary in JSON format with the following struc
           "startTime": "HH:MM",
           "endTime": "HH:MM",
           "duration": 120,
-          "cost": 50,
+          "cost": 2000,
           "category": "attraction",
           "bookingRequired": false
         }
@@ -67,7 +67,7 @@ Please provide a comprehensive itinerary in JSON format with the following struc
           "type": "lunch",
           "location": { "name": "Location", "address": "Address", "coordinates": { "lat": 0, "lng": 0 } },
           "time": "HH:MM",
-          "estimatedCost": 30,
+          "estimatedCost": 1500,
           "cuisine": "Local"
         }
       ],
@@ -81,8 +81,8 @@ Please provide a comprehensive itinerary in JSON format with the following struc
       "location": { "name": "Location", "address": "Address", "coordinates": { "lat": 0, "lng": 0 } },
       "checkIn": "YYYY-MM-DD",
       "checkOut": "YYYY-MM-DD",
-      "costPerNight": 150,
-      "totalCost": 450,
+      "costPerNight": 8000,
+      "totalCost": 24000,
       "amenities": ["WiFi", "Breakfast"],
       "rating": 4.5
     }
@@ -94,14 +94,16 @@ Please provide a comprehensive itinerary in JSON format with the following struc
       "to": { "name": "Destination", "address": "", "coordinates": { "lat": 0, "lng": 0 } },
       "departureTime": "YYYY-MM-DDTHH:MM:SS",
       "arrivalTime": "YYYY-MM-DDTHH:MM:SS",
-      "cost": 500
+      "cost": 25000
     }
   ],
-  "totalCost": 2000
+  "totalCost": 100000
 }
 
+IMPORTANT: All costs must be in Indian Rupees (INR). Use realistic INR pricing for Indian destinations.
+
 Ensure the itinerary:
-1. Stays within the budget
+1. Stays within the budget (in INR)
 2. Matches the selected mood and interests
 3. Includes realistic timing and logistics
 4. Suggests local hidden gems
