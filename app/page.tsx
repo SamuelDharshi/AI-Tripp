@@ -2,6 +2,7 @@
 
 import { MapPin, Clock, Sparkles, Navigation, Cloud, Heart, MessageCircle, CreditCard, Brain, Zap, TrendingUp, Users } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import { ShaderAnimation } from "@/components/ui/shader-animation";
 
 export default function Home() {
   return (
@@ -47,7 +48,7 @@ export default function Home() {
             <a href="/plan" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition transform hover:scale-105">
               Start Planning Free
             </a>
-            <a href="/plan" className="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition">
+            <a href="/demo" className="bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 px-8 py-4 rounded-full text-lg font-semibold border-2 border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition">
               Watch Demo
             </a>
           </div>
@@ -94,6 +95,20 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Shader Demo Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Realtime Shader Animation</h2>
+          <p className="text-center text-gray-600 dark:text-gray-300 mb-8">GPU-accelerated hero background built with Three.js shaders.</p>
+          <div className="relative flex h-[650px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl border bg-blue-700">
+            <ShaderAnimation />
+            <span className="absolute pointer-events-none z-10 text-center text-5xl md:text-7xl leading-none font-semibold tracking-tighter whitespace-pre-wrap text-white">
+              Shader Animation
+            </span>
           </div>
         </div>
       </section>
