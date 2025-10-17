@@ -151,7 +151,7 @@ export default function TripPlanningForm({ onSubmit, isLoading }: TripPlanningFo
       <div>
         <label className="block text-sm font-semibold text-gray-700 dark:text-gray-200 mb-3">
           <Heart className="w-4 h-4 inline mr-1" />
-          What's your travel mood? *
+          What&apos;s your travel mood? *
         </label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {moods.map((mood) => (

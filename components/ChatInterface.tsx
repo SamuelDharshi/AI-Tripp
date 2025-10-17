@@ -81,7 +81,7 @@ export default function ChatInterface({ tripId, onItineraryUpdate }: ChatInterfa
       const errorMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
-        content: "I'm sorry, I encountered an error. Please try again.",
+  content: "I&apos;m sorry, I encountered an error. Please try again.",
         timestamp: new Date(),
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -105,7 +105,7 @@ export default function ChatInterface({ tripId, onItineraryUpdate }: ChatInterfa
           <Bot className="w-8 h-8" />
           <div>
             <h3 className="text-xl font-bold">AI Travel Assistant</h3>
-            <p className="text-sm opacity-90">Let's plan your perfect trip</p>
+            <p className="text-sm opacity-90">Let&apos;s plan your perfect trip</p>
           </div>
         </div>
       </div>

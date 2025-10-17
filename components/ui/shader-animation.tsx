@@ -124,7 +124,7 @@ export function ShaderAnimation() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 w-full h-full"
+      className="fixed inset-0 w-full h-full"
       style={{
         background: "#000",
         overflow: "hidden",

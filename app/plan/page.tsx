@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { Sparkles, MessageCircle, FileText } from 'lucide-react';
 import TripPlanningForm from '@/components/TripPlanningForm';
 import ChatInterface from '@/components/ChatInterface';
@@ -51,12 +52,12 @@ export default function PlanPage() {
       {/* Header */}
       <header className="bg-white dark:bg-gray-900 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <a href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <Sparkles className="w-8 h-8 text-blue-600" />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               AI DreamTrip
             </span>
-          </a>
+          </Link>
           <div className="flex gap-4 items-center">
             <button
               onClick={() => setViewMode('form')}

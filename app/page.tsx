@@ -2,11 +2,10 @@
 
 import { MapPin, Clock, Sparkles, Navigation, Cloud, Heart, MessageCircle, CreditCard, Brain, Zap, TrendingUp, Users } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
-import { ShaderAnimation } from "@/components/ui/shader-animation";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+  <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-800">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -36,12 +35,12 @@ export default function Home() {
             <span className="text-sm font-medium">Your 24/7 AI Travel Companion</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent opacity-80">
             Plan, Book & Travel—<br />All Automated by AI
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
-            End-to-end trip planning optimized for your budget, mood, and time. Real-time guidance that adapts to weather, delays, and your preferences.
+          <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-3xl mx-auto opacity-80">
+          End-to-end trip planning optimized for your budget, mood, and time. Real-time guidance that adapts to weather, delays, and your preferences.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -55,23 +54,23 @@ export default function Home() {
           
           <div className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-600 dark:text-gray-400">
             <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-yellow-500" />
+              <Zap className="w-4 h-4 text-yellow-400" />
               <span>80% Faster Planning</span>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-blue-500" />
+              <Users className="w-4 h-4 text-blue-400" />
               <span>10K+ Happy Travelers</span>
             </div>
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-green-500" />
+              <TrendingUp className="w-4 h-4 text-green-400" />
               <span>4.8/5 Rating</span>
             </div>
           </div>
 
           {/* Hero Image Placeholder */}
           <div className="mt-16 relative">
-            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl shadow-2xl p-8 max-w-5xl mx-auto aspect-video flex items-center justify-center">
-              <div className="text-white text-center">
+            <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-3xl shadow-2xl p-8 max-w-5xl mx-auto aspect-video flex items-center justify-center relative overflow-hidden">
+              <div className="text-white text-center relative z-20">
                 <MapPin className="w-20 h-20 mx-auto mb-4 opacity-50" />
                 <p className="text-2xl font-semibold opacity-75">App Screenshot / Demo</p>
               </div>
@@ -99,22 +98,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Shader Demo Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">Realtime Shader Animation</h2>
-          <p className="text-center text-gray-600 dark:text-gray-300 mb-8">GPU-accelerated hero background built with Three.js shaders.</p>
-          <div className="relative flex h-[650px] w-full flex-col items-center justify-center overflow-hidden rounded-2xl border bg-blue-700">
-            <ShaderAnimation />
-            <span className="absolute pointer-events-none z-10 text-center text-5xl md:text-7xl leading-none font-semibold tracking-tighter whitespace-pre-wrap text-white">
-              Shader Animation
-            </span>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-6 bg-white dark:bg-gray-900">
+        <section id="features" className="py-20 px-6 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Everything you need for the perfect trip</h2>
@@ -192,7 +179,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-6">
+        <section id="how-it-works" className="py-20 px-6 bg-gradient-to-br from-gray-50/95 to-blue-50/95 dark:from-gray-800/95 dark:to-gray-900/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">How AI DreamTrip works</h2>
@@ -226,7 +213,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold mb-3">Review & Refine</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm">
-                Chat with AI to modify, swap activities, or adjust timing until it's perfect.
+                Chat with AI to modify, swap activities, or adjust timing until it&apos;s perfect.
               </p>
             </div>
 
@@ -254,11 +241,11 @@ export default function Home() {
       </section>
 
       {/* Target Users Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-900">
+        <section className="py-20 px-6 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Perfect for every traveler</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">Whether you're solo, with family, or on business</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">Whether you&apos;re solo, with family, or on business</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -290,7 +277,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-6 bg-white dark:bg-gray-900">
+        <section className="py-20 px-6 bg-gradient-to-br from-gray-50/95 to-blue-50/95 dark:from-gray-800/95 dark:to-gray-900/95 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Proven results, happy travelers</h2>
@@ -329,13 +316,13 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-purple-600">
+        <section className="py-20 px-6 bg-gradient-to-r from-blue-600/95 to-purple-600/95 backdrop-blur-sm">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Your next adventure starts here
           </h2>
           <p className="text-xl mb-10 opacity-90">
-            Join thousands who've discovered stress-free travel with AI DreamTrip. Plan 80% faster, travel smarter.
+            Join thousands who&apos;ve discovered stress-free travel with AI DreamTrip. Plan 80% faster, travel smarter.
           </p>
           <a href="/plan" className="inline-block bg-white text-blue-600 px-10 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition transform hover:scale-105">
             Start Planning Free
@@ -344,7 +331,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12 px-6">
+        <footer className="bg-gray-900/95 backdrop-blur-sm text-gray-300 py-12 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
